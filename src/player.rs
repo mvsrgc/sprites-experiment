@@ -1,6 +1,4 @@
-use bracket_lib::terminal::{VirtualKeyCode, BTerm, INPUT};
-
-use crate::State;
+use bracket_lib::terminal::{BTerm, VirtualKeyCode, INPUT};
 
 use super::Player;
 
@@ -21,7 +19,7 @@ pub fn player_input(ctx: &mut BTerm, player: &mut Player) {
     let mut dx: f32 = 0.0;
     let mut dy: f32 = 0.0;
 
-    let mut input = INPUT.lock();
+    let input = INPUT.lock();
     if input.is_key_pressed(VirtualKeyCode::Up) {
         dy = -1.0;
     }
